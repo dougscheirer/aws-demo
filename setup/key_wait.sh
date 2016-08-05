@@ -11,6 +11,7 @@ if [ "$1" = "fork" ]; then
 			salt '*' test.ping | logger
 			DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 			sh DIR/salt-deploy.sh
+			exit 0
 		fi
 		logger "waiting for salt minions to register"
 		salt-key -L | logger

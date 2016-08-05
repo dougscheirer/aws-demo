@@ -6,9 +6,9 @@ if [ ! -e /srv/salt ] ; then
 	aws --region=us-west-1 --no-sign-request s3 sync s3://perforce-doug-test/salt-for-aws-cf/salt /srv/salt
 fi
 
-salt '*' saltutil.sync_all
+salt '*' saltutil.sync_all | logger
 
-salt '*' state.apply
+salt '*' state.highstate | logger
 
 # now...make a p4d or something?
-salt '*' p4d.create default
+salt '*' p4d.create default | logger
