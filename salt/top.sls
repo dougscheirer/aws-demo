@@ -2,10 +2,15 @@ base:
   '*':
     - docker-engine
 
-  # 'p4d-host':
-    # - zfs
-    # - xinetd
+  'p4d-host':
+    - zfs
 
-  # 'app-host':
+  'app-host':
+    - docker-swarm
+    - docker-hws
+    - docker-admin
 
-  # 'master':  
+  'master':
+    - docker-haproxy
+    - docker-p4broker
+    

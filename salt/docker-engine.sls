@@ -1,6 +1,9 @@
-/etc/yum.repos.d/docker.repo:
-  file.managed:
-    - source: salt://files/docker.repo
+docker-repo:
+  pkgrepo.managed:
+    - humanname: Docker Repository
+    - baseurl: https://yum.dockerproject.org/repo/main/centos/7/
+    - gpgcheck: 1
+    - gpgkey: https://yum.dockerproject.org/gpg
 
 docker-engine:
   pkg:
