@@ -30,5 +30,8 @@ zfs:
       - zfs
     - require:
       - pkg: zfs_release
+  kmod.present:
+    - mods:
+      - zfs
 
 {% endif %}
