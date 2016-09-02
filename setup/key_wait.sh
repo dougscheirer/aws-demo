@@ -21,7 +21,8 @@ if [ "$FORK" == "fork" ]; then
 			# in AWS you would send a notification to a WaitConditionHandle
 			# to let it know if we were successful
 			if [ "$COMPLETE_URL" != "" ]; then
-				cfn-signal -r 'salt deploy complete' -e $RETVAL "$COMPLETE_URL"
+				echo "sending signal to $COMPLETE_URL"
+				cfn-signal -r 'salt deploy complete' -e $RETVAL "$COMPLETE_URL" 2>&1
 			fi
 			exit $RETVAL
 		fi
