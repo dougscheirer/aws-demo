@@ -1,4 +1,5 @@
 #!/bin/bash
+set +e
 
 COMPLETE_URL="$1"
 FORK="$2"
