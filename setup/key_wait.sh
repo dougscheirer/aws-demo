@@ -16,6 +16,7 @@ if [ "$FORK" == "fork" ]; then
 			SALT="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/.. && pwd )"
 			sh $DIR/salt-deploy.sh $SALT
 			RETVAL=$?
+			echo "returned from salt-deply: $RETVAL"
 			# in AWS you would send a notification to a WaitConditionHandle
 			# to let it know if we were successful
 			if [ "$COMPLETE_URL" != "" ]; then
