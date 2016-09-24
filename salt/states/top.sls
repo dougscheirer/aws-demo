@@ -14,5 +14,6 @@ base:
     - p4.p4dctl
     - p4.client
     - perlmods
+    - mounts
 
   'app-host': []
