@@ -9,11 +9,11 @@ base:
     - p4.p4dctl
 
   'p4d-host':
+    - disks
     - p4.server
     - p4python
     - p4.p4dctl
     - p4.client
     - perlmods
-    - mounts
 
   'app-host': []

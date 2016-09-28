@@ -10,6 +10,3 @@ p4:
     services:
       running:
         - p4d-main
-      require:
-        - mount: /p4/metadata
-        - mount: /p4/depots
