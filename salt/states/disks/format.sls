@@ -1,5 +1,18 @@
+{% if grains['os'] == 'Amazon' %}
+
+/dev/xvdm:
+  lvm.pv_present
+/dev/xvdp:
+  lvm.pv_present
+
+{% else %}
+
 /dev/sdb:
   lvm.pv_present
+/dev/sdc:
+  lvm.pv_present
+
+{% endif %}
 
 metadata_vg:
   lvm.vg_present:
@@ -18,9 +31,6 @@ metadata_volume:
   blockdev.formatted:
     - name: /dev/metadata_vg/metadata_lv
     - fs_type: xfs
-
-/dev/sdc:
-  lvm.pv_present
 
 p4data_vg:
   lvm.vg_present:
