@@ -6,4 +6,3 @@ cronjob:
     - mode:   555
     - contents:
       - "#!/bin/bash"
-      - "/opt/perforce/sbin/p4d -r /p4/metadata -jc daily-checkpoint"
