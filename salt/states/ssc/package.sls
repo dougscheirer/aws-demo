@@ -5,6 +5,7 @@ m2crypto_package_deps:
       - openssl-devel
   {% if grains['os'] == 'Amazon' %}
       - python26-devel
+      - python26-m2crypto
   {% elif grains['os'] == 'CentOS' %}
       - python-devel
   {% else %}
